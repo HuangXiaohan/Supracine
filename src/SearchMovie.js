@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import MovieList from './MovieList';
 import './SearchMovie.css';
 import PageOption from './PageOption';
+import { Route, Link, useHistory } from 'react-router-dom';
 
 class SearchMovie extends Component{
 
@@ -25,6 +26,9 @@ class SearchMovie extends Component{
         this.searchMovie(1);
     }
 
+    componentWillUnmount(){
+    }
+
     
     render(){
         return(
@@ -39,11 +43,15 @@ class SearchMovie extends Component{
                         <option value="episode">Episode</option>
                         <option value="">All</option>
                     </select>
-                    <button type="submit" onClick={this.searchMovie.bind(this,1)}>Search</button>
+                    <Link to="/search" onClick={this.searchMovie.bind(this,1)}>
+                        <button type="submit">Search</button>
+                    </Link>
+                    
                 </div>
                 <div className="movie-list">
                     <MovieList movieList={this.state.movieList}/>
                 </div>
+                
                 <div className="clear" ></div> 
                 <div className="page-option">
                     <PageOption total={this.state.totalResults} selectPage={this.searchMovie}/>
@@ -72,7 +80,8 @@ class SearchMovie extends Component{
                         totalResults: 0
                     });
                 }
-            )
+            );
+            
     }
 
     handleChange(e){
