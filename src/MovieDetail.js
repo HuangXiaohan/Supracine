@@ -67,7 +67,7 @@ class MovieDetail extends Component{
                             <div className="rate" style={this.state.rateStyle}>{this.state.rate}</div>
                         </div>
                     </div>
-                    <div className="vote">{this.state.movieInfo.imdbVotes === "N/A" ? "" : this.state.movieInfo.imdbVotes + " votes"}</div>
+                    <div className="vote">{this.state.movieInfo.imdbVotes === "N/A" ? "No votes yet" : this.state.movieInfo.imdbVotes + " votes"}</div>
                     <div className="clear" ></div> 
                     <div className="info">
                         <p><b>Type : </b>{this.state.movie.Type}</p>
