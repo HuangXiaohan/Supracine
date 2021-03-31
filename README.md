@@ -12,23 +12,27 @@ Supracine est une application qui simule un site d'information sur les films. El
 
 ## Lancement
 
-- supracine-react: Demande Node >= 10.16 and npm >= 5.6. Les versions sur mon ordinateur sont **Node 14.16.0** et **npm 7.7.5**. Pour lancer l'application, exécutez: **npm start**.
+- **supracine-react**: Demande Node >= 10.16 and npm >= 5.6. Les versions sur mon ordinateur sont **Node 14.16.0** et **npm 7.7.5**. Pour lancer l'application, exécutez: **npm start**.
 
-Si vous rencontez une erreur comme:
-```
-    events.js:xxx
-      throw er; // Unhandled 'error' event
-      ^
-```
-Essayez de exécuter:
+    Si vous rencontez une erreur comme:
+    ```
+        events.js:xxx
+        throw er; // Unhandled 'error' event
+        ^
+    ```
+    Essayez de exécuter:
 
-npm install react-scripts@2.1.8
-npm start
+    ```
+    npm install react-scripts@2.1.8
+    npm start
+    ```
 
-ou
+    ou
 
-rm -rf node_modules
-npm cache clear --force
-npm install
+    ```
+    rm -rf node_modules
+    npm cache clear --force
+    npm install
+    ```
 
-- supracine-angular: Ce projet a été généré avec **Angular CLI version 11.2.6**. Pour lancer l'application, exécutez: **ng serve --open**.
+- **supracine-angular**: Ce projet a été généré avec **Angular CLI version 11.2.6**. Pour lancer l'application, exécutez: **ng serve --open**.
