@@ -1,0 +1,14 @@
+<div>
+    <div class="movie-list">
+        <div *ngFor="let movie of movieList" class="movie-card">
+            <a routerLink="/movie/{{movie.imdbID}}" routerLinkActive="active">
+                <img class="movie-img" [src]="movie.Poster === 'N/A' ? '' : movie.Poster" [alt]="movie.Title"/>
+                <div class="movie-info">
+                    <p>{{movie.Title}}</p>
+                    <p>{{movie.Year}}</p>
+                </div>
+            
+            </a>
+        </div>
+    </div>
+</div>

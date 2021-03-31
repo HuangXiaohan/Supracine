@@ -1,0 +1,151 @@
+.search-field{
+    margin-top: 30px;
+    height: 50px;
+}
+
+.search-field input, select{
+    margin-right: 50px;
+    margin-left: 20px;
+    border-radius: 5px;
+    background: #F9F0DA;
+    top: 0;
+    right: 0;
+    height: 35px;
+    width: 150px;
+    font-size: 16px;
+}
+.search-field button {
+    margin-left: 30px;
+    background: #c5464a;
+    height: 35px;
+    width: 80px;
+    top: 0;
+    right: 0;
+    font-size: 17px;
+    color: honeydew;
+}
+
+.movie-list{
+    margin-top: 30px;
+}
+
+.movie-card{
+    float: left;
+    height: 420px;
+    width: 300px;
+    background-color: black;
+    border: thin solid gray;
+    position: relative;
+}
+
+.movie-img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: auto;
+}
+
+.movie-info{
+    position: absolute;
+    width: 220px;
+    left: 40px;
+    top: 150px;
+    z-index: 2;
+    font-size: 20px;
+    color: white;
+    display: none;
+}
+
+.movie-card:hover .movie-info{
+    display: block;
+}
+
+.movie-card:hover .movie-img{
+    opacity: 0.4;
+}
+
+.movie-info p{
+    text-align: center;
+}
+
+.clear{
+    clear: both;
+}
+
+.page-option{
+    margin: 50px auto 100px;
+    text-align: center;
+    max-width: 700px;
+}
+
+.page{
+    border: none;
+    background: transparent;
+    float: left;
+    margin-right: 30px;
+    color: white;
+    font-size: 20px;
+}
+
+
+.movie-detail{
+    color:gainsboro;
+    position: relative;
+}
+
+.movie-image-div{
+    margin-top: 30px;
+    float: left;
+    width: 350px;
+    margin-right: 40px;
+}
+
+.movie-content{
+    position:absolute;
+    left: 390px;
+}
+
+.movie-title{
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.info p{
+    line-height:150%;
+    text-transform: capitalize;
+}
+
+.rate-div{
+    width: 300px;
+    float: left;
+    margin-right: 20px;
+}
+
+
+.rate-container {
+    width: 100%;
+    background-color: #ddd;
+    margin: 10px;
+}
+
+.rate {
+    text-align: right;
+    padding-right: 20px;
+    line-height: 30px;
+    color: white;
+    background-color: #1e67a3;
+}
+
+.left{
+    float: left;
+}
+
+.vote{
+    margin-top: 45px;
+    font-size: 15px;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+  }

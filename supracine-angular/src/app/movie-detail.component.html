@@ -1,0 +1,29 @@
+<div class="movie-detail">
+    <div class="movie-image-div">
+        <img class="movie-img" [src]="movieInfo.Poster" [alt]="movieInfo.Title"/>
+    </div>
+    <div class="movie-content">
+        <p class="movie-title">{{movieInfo.Title}}</p>
+        <p class="left"><b>Rating : </b></p>
+        <div class="rate-div">
+            <div class="rate-container">
+                <div class="rate" [style.width] = "rate">{{rate}}</div>
+            </div>
+        </div>
+        <div class="vote">{{this.movieInfo.imdbVotes === "N/A" ? "No votes yet" : this.movieInfo.imdbVotes + " votes"}}</div>
+        <div class="clear" ></div> 
+        <div class="info">
+            <p><b>Type : </b>{{this.movieInfo.Type}}</p>
+            <p><b>Genre : </b>{{this.filterText(this.movieInfo.Genre)}}</p>
+            <p><b>Year : </b>{{this.movieInfo.Year}}</p>
+            <p><b>Released : </b>{{this.filterText(this.movieInfo.Released)}}</p>
+            <p><b>Country : </b>{{this.filterText(this.movieInfo.Country)}}</p>
+            <p><b>Language : </b>{{this.filterText(this.movieInfo.Language)}}</p>
+            <p><b>RunTime : </b>{{this.movieInfo.RunTime}}</p>
+            <p><b>Director : </b> {{this.filterText(this.movieInfo.Director)}}</p>
+            <p><b>Writer : </b> {{this.filterText(this.movieInfo.Writer)}}</p>
+            <p><b>Actors : </b>  {{this.filterText(this.movieInfo.Actors)}}</p>
+            <p><b>Introduction : </b> {{this.filterText(this.movieInfo.Plot)}}</p>
+        </div>
+    </div>
+</div>

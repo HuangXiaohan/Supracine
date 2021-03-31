@@ -1,0 +1,18 @@
+<div>  
+    <div class="search-field">
+        <span>Title: </span><input type="text" name="searchTitle" [(ngModel)]="searchTitle"/>
+        <span>Year: </span><input type="text" name="searchYear" [(ngModel)]="searchYear"/>
+        <span>Type: </span>
+        <select name="searchType" [(ngModel)]="searchType">
+            <option *ngFor="let t of types" [value] = "t.value">{{t.name}}</option>
+        </select>
+        <a routerLink="/search/{{searchTitle}}/{{searchYear}}/{{searchType}}/1" routerLinkActive="active">
+            <button type="submit" (click)="searchMovie(1)">Search</button>
+        </a>
+    </div>
+    <movie-list [movieList] = "movieList"></movie-list>
+    <div class="clear" ></div> 
+    <div class="page-option">
+        <page-option [total]="this.totalResults" (setCurrentPage)="setCurrentPage($event)"></page-option>
+    </div>
+</div>
