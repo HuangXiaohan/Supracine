@@ -111,6 +111,7 @@ button {
     position:absolute;
     left: 390px;
     padding-bottom: 50px;
+    width: 60%;
 }
 
 .movie-title{
