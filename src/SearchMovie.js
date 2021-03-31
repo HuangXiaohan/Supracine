@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import MovieList from './MovieList';
 import './SearchMovie.css';
 import PageOption from './PageOption';
-import { Route, Link, Switch, withRouter } from 'react-router-dom';
+import { Route, Link, withRouter } from 'react-router-dom';
 
 class SearchMovie extends Component{
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import SearchMovie from './SearchMovie';
