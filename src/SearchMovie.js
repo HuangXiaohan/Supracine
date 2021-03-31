@@ -61,6 +61,8 @@ class SearchMovie extends Component{
             this.searchMovie(page)
             this.props.history.push(`/search/${this.state.searchTitle}/${this.state.searchYear}/${this.state.searchType}/${this.state.currentPage}`);
         });
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
     }
 
     searchMovie(page){
