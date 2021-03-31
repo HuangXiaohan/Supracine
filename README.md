@@ -1,6 +1,6 @@
 # Supracine
 
-Supracine est une application qui simule un site d'information sur les films. Elle est réalisé par deux manière. L'un est en framwork React et l'autre est en Angular.
+Supracine est une application qui simule un site d'information sur les films. Elle est réalisée de deux manières. L'un est en framework React et l'autre est en Angular.
 
 ## Fonctionnalités
 
@@ -12,15 +12,15 @@ Supracine est une application qui simule un site d'information sur les films. El
 
 ## Lancement
 
-- **supracine-react**: Demande Node >= 10.16 and npm >= 5.6. Les versions sur mon ordinateur sont **Node 14.16.0** et **npm 7.7.5**. Pour lancer l'application, exécutez: **npm start**.
+- **supracine-react**: Demande **Node >= 10.16** et **npm >= 5.6**. Les versions sur mon ordinateur sont Node 14.16.0 et npm 7.7.5. Pour lancer l'application, exécutez: **npm start**.
 
-    Si vous rencontez une erreur comme:
+    Si vous rencontrez une erreur de lancement comme:
     ```
-        events.js:xxx
-        throw er; // Unhandled 'error' event
-        ^
+    events.js:xxx
+    throw er; // Unhandled 'error' event
+    ^
     ```
-    Essayez de exécuter:
+    Essayez d'exécuter:
 
     ```
     npm install react-scripts@2.1.8
