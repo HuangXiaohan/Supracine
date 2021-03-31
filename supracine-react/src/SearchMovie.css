@@ -14,15 +14,22 @@
     width: 150px;
     font-size: 16px;
 }
-.search-field button {
+
+button {
     margin-left: 30px;
-    background: #c5464a;
     height: 35px;
-    width: 80px;
     top: 0;
     right: 0;
     font-size: 17px;
     color: honeydew;
+}
+
+.red-button{
+    background: #c5464a;
+}
+
+.blue-button{
+    background: #1e67a3;
 }
 
 .movie-list{
@@ -103,6 +110,7 @@
 .movie-content{
     position:absolute;
     left: 390px;
+    padding-bottom: 50px;
 }
 
 .movie-title{
@@ -142,5 +150,55 @@
 
 .vote{
     margin-top: 45px;
+    font-size: 15px;
+}
+
+.info{
+    margin-bottom: 50px;
+}
+
+.add-favorite{
+    margin: auto;
+}
+
+.favorites-link{
+    float: right;
+    margin: 8px 50px;
+    text-decoration:underline;
+}
+
+.favorites-list-title{
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.favorite-img{
+    float: left;
+    width: 120px;
+    height: 180px;
+    margin-right: 20px;
+}
+
+.favorite-card{
+    margin-top: 10px;
+    height: 180px;
+    border: solid 1px gray;
+}
+
+.favorite-card p{
+    text-transform: capitalize;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.favorite-title{
+    font-size: 18px;
+}
+
+.small{
     font-size: 15px;
 }

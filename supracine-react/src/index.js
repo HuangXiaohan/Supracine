@@ -5,6 +5,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import SearchMovie from './SearchMovie';
 import MovieDetail from './MovieDetail';
+import FavoritesList from './FavoritesList';
 
 ReactDOM.render(
   <Router>
@@ -12,6 +13,7 @@ ReactDOM.render(
       <Link to="/">
         <span className="supra">SUPRA</span><span className="cine">CINE</span>
       </Link>
+      <hr></hr>
       <Switch>
         <Route exact path="/">
           <SearchMovie/>
@@ -21,6 +23,9 @@ ReactDOM.render(
         </Route>
         <Route path="/movie/:id">
           <MovieDetail/>
+        </Route>
+        <Route path="/favorites">
+          <FavoritesList/>
         </Route>
       </Switch>
     </div>

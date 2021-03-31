@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import MovieCard from './MovieCard';
+import './SearchMovie.css';
 
 class MovieList extends Component{
     render(){

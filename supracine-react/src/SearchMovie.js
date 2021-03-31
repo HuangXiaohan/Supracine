@@ -42,7 +42,10 @@ class SearchMovie extends Component{
                         <option value="">All</option>
                     </select>
                     <Link to={{pathname : `/search/${this.state.searchTitle}/${this.state.searchYear}/${this.state.searchType}/1`}}>
-                        <button type="submit" onClick={this.searchMovie.bind(this,1)}>Search</button>
+                        <button type="submit" onClick={this.searchMovie.bind(this,1)} className="red-button">Search</button>
+                    </Link>
+                    <Link to="/favorites">
+                        <p className="favorites-link" href="">My favorites</p>
                     </Link>
                 </div>
                 <MovieList movieList={this.state.movieList}/>

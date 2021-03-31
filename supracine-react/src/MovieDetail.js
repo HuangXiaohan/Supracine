@@ -1,6 +1,7 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import './SearchMovie.css';
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import {favorites} from "./Favorites";
 
 class MovieDetail extends Component{
     constructor(props){
@@ -9,13 +10,19 @@ class MovieDetail extends Component{
             movieId : this.props.match.params.id,
             movieInfo: "",
             rate: "",
-            rateStyle:{}
+            rateStyle:{},
+            isFavorite: false
         }
 
         this.filterText = this.filterText.bind(this);
+        this.changeFavorite = this.changeFavorite.bind(this);
     }
 
     componentDidMount(){
+        if(favorites.includes(this.state.movieId)){
+            this.setState({isFavorite: true});
+        }
+
         var source = "http://www.omdbapi.com/?i=" + this.state.movieId + "&apikey=4eacbfee";
         fetch(source)
             .then(res => res.json())
@@ -53,6 +60,24 @@ class MovieDetail extends Component{
             return t;
     }
 
+    changeFavorite(){
+        if(this.state.isFavorite){
+            for( var i = 0; i < favorites.length; i++){                        
+                if ( favorites[i] === this.state.movieId) { 
+                    favorites.splice(i, 1); 
+                    i--; 
+                }
+            }
+        }
+        else{
+            favorites.push(this.state.movieId);
+        }
+
+        this.setState({isFavorite : !this.state.isFavorite});
+        
+        //console.log(favorites);
+    }
+
     render(){
         return(
             <div className="movie-detail">
@@ -81,6 +106,12 @@ class MovieDetail extends Component{
                         <p><b>Writer : </b> {this.filterText(this.state.movieInfo.Writer)}</p>
                         <p><b>Actors : </b>  {this.filterText(this.state.movieInfo.Actors)}</p>
                         <p><b>Introduction : </b> {this.filterText(this.state.movieInfo.Plot)}</p>
+                    </div>
+                    <div className="favorite">
+                        <button className={`add-favorite ${this.state.isFavorite ? 'blue-button' : 'red-button' }`} onClick={this.changeFavorite}>{this.state.isFavorite ? "Remove from favorite" : "Add to favorites"}</button>
+                        <Link to="/favorites">
+                            <p className="favorites-link" href="">My favorites</p>
+                        </Link>
                     </div>
                 </div>
             </div>
