@@ -1,1 +1,1 @@
-export let favorites = [];
+export var favorites = [];

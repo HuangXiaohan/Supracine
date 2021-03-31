@@ -8,13 +8,19 @@ import { SearchMovieComponent } from './search-movie.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieListComponent } from './movie-list.component';
 import { PageOption } from './page-option.component';
+import { FavoritesListComponent } from './favorites-list.componnet';
+import { FavoriteCardComponent } from './favorite-card.component';
+import { MovieDetailComponent } from './movie-detail.component';
 
 @NgModule({
   declarations: [
     HomepageComponent,
     SearchMovieComponent,
     MovieListComponent,
-    PageOption
+    PageOption,
+    MovieDetailComponent,
+    FavoritesListComponent,
+    FavoriteCardComponent
   ],
   imports: [
     BrowserModule,

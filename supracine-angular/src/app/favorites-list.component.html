@@ -1,0 +1,9 @@
+<div>
+    <p class="favorites-list-title"><i>My Favorite List</i></p>
+    <p *ngIf="favorites.length == 0">You haven't add any favorite movie.</p>
+    <div *ngFor="let f of favorites">
+        <a routerLink="/movie/{{f}}" routerLinkActive="active">
+            <favorite-card [movieId]="f"></favorite-card>
+        </a>
+    </div>
+</div>

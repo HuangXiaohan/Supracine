@@ -1,0 +1,1 @@
+export var favorites = new Array<any>();

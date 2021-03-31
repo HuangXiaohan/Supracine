@@ -7,8 +7,9 @@
             <option *ngFor="let t of types" [value] = "t.value">{{t.name}}</option>
         </select>
         <a routerLink="/search/{{searchTitle}}/{{searchYear}}/{{searchType}}/1" routerLinkActive="active">
-            <button type="submit" (click)="searchMovie(1)">Search</button>
+            <button type="submit" (click)="searchMovie(1)" class="red-button">Search</button>
         </a>
+        <a routerLink="/favorites" class="favorites-link" routerLinkActive="active">My favorites</a>
     </div>
     <movie-list [movieList] = "movieList"></movie-list>
     <div class="clear" ></div> 

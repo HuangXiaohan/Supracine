@@ -1,0 +1,12 @@
+<div class="favorite-card">
+    <div class="favorite-img">
+        <img class="movie-img" [src]="movieInfo.Poster" [alt]="movieInfo.Title"/>
+    </div>
+    <div>
+        <p class="favorite-title"><b>{{movieInfo.Title}}</b></p>
+        <p class="small"><i>Genre : {{filterText(movieInfo.Genre)}}</i></p>
+        <p class="small"><i>Director : {{filterText(movieInfo.Director)}}</i></p>
+        <p class="small"><i>Actors :  {{filterText(movieInfo.Actors)}}</i></p>
+        <p class="small"><i>Introduction : {{filterText(movieInfo.Plot)}}</i></p>
+    </div>
+</div>

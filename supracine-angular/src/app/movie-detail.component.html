@@ -1,6 +1,6 @@
 <div class="movie-detail">
     <div class="movie-image-div">
-        <img class="movie-img" [src]="movieInfo.Poster" [alt]="movieInfo.Title"/>
+        <img class="movie-img" [src]="movieInfo.Poster === 'N/A' ? '' : movieInfo.Poster" [alt]="movieInfo.Title"/>
     </div>
     <div class="movie-content">
         <p class="movie-title">{{movieInfo.Title}}</p>
@@ -24,6 +24,10 @@
             <p><b>Writer : </b> {{this.filterText(this.movieInfo.Writer)}}</p>
             <p><b>Actors : </b>  {{this.filterText(this.movieInfo.Actors)}}</p>
             <p><b>Introduction : </b> {{this.filterText(this.movieInfo.Plot)}}</p>
+        </div>
+        <div className="favorite">
+            <button class="add-favorite" [class]="isFavorite ? 'blue-button' : 'red-button'" (click)="changeFavorite()">{{isFavorite ? "Remove from favorite" : "Add to favorites"}}</button>
+            <a routerLink="/favorites" class="favorites-link" routerLinkActive="active">My favorites</a>
         </div>
     </div>
 </div>
