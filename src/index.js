@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import SearchMovie from './SearchMovie';
@@ -9,12 +9,14 @@ import MovieDetail from './MovieDetail';
 ReactDOM.render(
   <Router>
     <div className="homepage">
-      <Redirect to="/search" />
-      <Link to="/search">
+      <Link to="/">
         <span className="supra">SUPRA</span><span className="cine">CINE</span>
       </Link>
       <Switch>
-        <Route path="/search">
+        <Route exact path="/">
+          <SearchMovie/>
+        </Route>
+        <Route exact path="/search/:t/:y/:type/:page">
           <SearchMovie/>
         </Route>
         <Route path="/movie/:id">

@@ -2,30 +2,29 @@ import React, {Component} from 'react';
 import MovieList from './MovieList';
 import './SearchMovie.css';
 import PageOption from './PageOption';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Link, Switch, withRouter } from 'react-router-dom';
 
 class SearchMovie extends Component{
 
     constructor(props){
         super(props);
         this.state = {
-            searchTitle: "hero",
-            searchYear: 2020,
-            searchType: "movie",
+            searchTitle: this.props.match.params.t ? this.props.match.params.t : "hero",
+            searchYear: this.props.match.params.y ? this.props.match.params.y : 2020,
+            searchType: this.props.match.params.type ? this.props.match.params.type : "movie",
+            currentPage: this.props.match.params.page ? this.props.match.params.page : 1,
             movieList: [],
             totalResults: 0
         };
 
         this.searchMovie = this.searchMovie.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.setCurrentPage = this.setCurrentPage.bind(this);
     }
 
 
     componentDidMount() {
-        this.searchMovie(1);
-    }
-
-    componentWillUnmount(){
+        this.searchMovie(this.state.currentPage);
     }
 
     
@@ -42,29 +41,26 @@ class SearchMovie extends Component{
                         <option value="episode">Episode</option>
                         <option value="">All</option>
                     </select>
-                    <Link to={{pathname : `/search/${this.state.searchTitle}/${this.state.searchYear}/${this.state.searchType}`}}>
+                    <Link to={{pathname : `/search/${this.state.searchTitle}/${this.state.searchYear}/${this.state.searchType}/1`}}>
                         <button type="submit" onClick={this.searchMovie.bind(this,1)}>Search</button>
                     </Link>
                 </div>
-                <Switch>
-                    <Route path="/search">
-                        <div className="movie-list">
-                            <MovieList movieList={this.state.movieList}/>
-                        </div>
-                    </Route>
-                    <Route path="/search/:t/:y/:type">
-                        <div className="movie-list">
-                            <MovieList movieList={this.state.movieList}/>
-                        </div>
-                    </Route>
-                </Switch>
-                
+                <MovieList movieList={this.state.movieList}/>
                 <div className="clear" ></div> 
                 <div className="page-option">
-                    <PageOption total={this.state.totalResults} selectPage={this.searchMovie}/>
+                    <PageOption total={this.state.totalResults} setCurrentPage={this.setCurrentPage}/>
                 </div>
             </div>
         );
+    }
+
+    setCurrentPage(page){
+        this.setState({
+            currentPage : page
+        },function(){
+            this.searchMovie(page)
+            this.props.history.push(`/search/${this.state.searchTitle}/${this.state.searchYear}/${this.state.searchType}/${this.state.currentPage}`);
+        });
     }
 
     searchMovie(page){
@@ -88,7 +84,7 @@ class SearchMovie extends Component{
                     this.setState({
                         movieList: [],
                         totalResults: 0
-                    },()=>alert("Error! "));
+                    },()=>alert("Error! "+ error));
                 }
             );
     }
@@ -102,4 +98,4 @@ class SearchMovie extends Component{
     }
 }
 
-export default SearchMovie;
+export default withRouter(SearchMovie);

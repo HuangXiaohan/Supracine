@@ -6,7 +6,7 @@ class MovieDetail extends Component{
     constructor(props){
         super(props);
         this.state = {
-            movie : this.props.location.state.movie,
+            movieId : this.props.match.params.id,
             movieInfo: "",
             rate: "",
             rateStyle:{}
@@ -16,7 +16,7 @@ class MovieDetail extends Component{
     }
 
     componentDidMount(){
-        var source = "http://www.omdbapi.com/?i=" + this.state.movie.imdbID + "&apikey=4eacbfee";
+        var source = "http://www.omdbapi.com/?i=" + this.state.movieId + "&apikey=4eacbfee";
         fetch(source)
             .then(res => res.json())
             .then(
@@ -57,10 +57,10 @@ class MovieDetail extends Component{
         return(
             <div className="movie-detail">
                 <div className="movie-image-div">
-                    <img className="movie-img" src={this.state.movie.Poster} alt={this.state.movie.Title}></img>
+                    <img className="movie-img" src={this.state.movieInfo.Poster} alt={this.state.movieInfo.Title}></img>
                 </div>
                 <div className="movie-content">
-                    <p className="movie-title">{this.state.movie.Title}</p>
+                    <p className="movie-title">{this.state.movieInfo.Title}</p>
                     <p className="left"><b>Rating : </b></p>
                     <div className="rate-div">
                         <div className="rate-container">
@@ -70,9 +70,9 @@ class MovieDetail extends Component{
                     <div className="vote">{this.state.movieInfo.imdbVotes === "N/A" ? "No votes yet" : this.state.movieInfo.imdbVotes + " votes"}</div>
                     <div className="clear" ></div> 
                     <div className="info">
-                        <p><b>Type : </b>{this.state.movie.Type}</p>
+                        <p><b>Type : </b>{this.state.movieInfo.Type}</p>
                         <p><b>Genre : </b>{this.filterText(this.state.movieInfo.Genre)}</p>
-                        <p><b>Year : </b>{this.state.movie.Year}</p>
+                        <p><b>Year : </b>{this.state.movieInfo.Year}</p>
                         <p><b>Released : </b>{this.filterText(this.state.movieInfo.Released)}</p>
                         <p><b>Country : </b>{this.filterText(this.state.movieInfo.Country)}</p>
                         <p><b>Language : </b>{this.filterText(this.state.movieInfo.Language)}</p>

@@ -16,7 +16,9 @@ class PageOption extends Component{
         //console.log(pageNumber);
         let pageOptions = [];
         for(let i = 0; i < pageNumber; i++){
-            pageOptions.push(<button className="page" onClick={this.selectPage.bind(this,i+1)} key={i}>{i+1}</button>)
+            pageOptions.push(
+                <button className="page" onClick={this.selectPage.bind(this,i+1)} key={i}>{i+1}</button>
+            )
         }
         return pageOptions;
     }
@@ -26,7 +28,7 @@ class PageOption extends Component{
             this.setState({
                 currentPage : page
             });
-            this.props.selectPage(page);
+            this.props.setCurrentPage(page);
         }
     }
 

@@ -9,7 +9,7 @@ class MovieList extends Component{
                 movies.push(<MovieCard movie={this.props.movieList[i]} key={this.props.movieList[i].imdbID+i}/>);
             }
         }
-        return movies;
+        return <div className="movie-list">{movies}</div>;
     }
 }
 
